@@ -1246,11 +1246,13 @@
             var contactSurname = $scope.data.contactSurname;
             var contactCell = $scope.data.contactCell;
             var contactEmail = $scope.data.contactEmail;
+            var contactUpdate = $scope.data.contactUpdate;
+            var contactId = $scope.data.contactId;
             
             if (contactName && contactSurname && contactCell && contactEmail) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath+'/app-results.php', { "reqType" : "contactUs", "membership" : contactMembership, "Care" : contactCare, "Protect" : contactProtect, "cName" : contactName, "cSurname" : contactSurname, "cCell" : contactCell, "cEmail" : contactEmail })
+                $http.post(apiPath+'/app-results.php', { "reqType" : "contactUs", "membership" : contactMembership, "Care" : contactCare, "Protect" : contactProtect, "cUpdate" : contactUpdate, "cName" : contactName, "cSurname" : contactSurname, "cID" : contactId, "cCell" : contactCell, "cEmail" : contactEmail })
                 .success(function(data, status){
                     if (data['error'] == 0) {
                         modal.hide();
