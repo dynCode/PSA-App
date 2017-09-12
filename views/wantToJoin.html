@@ -1,0 +1,23 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Want to join?</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <img src="{{subBanner}}" style="max-width: 8000px; width: 100%;" />
+    </div>
+    <a onclick="myNavigator.pushPage('views/join/perks.html', { animation : 'lift' } )">
+        <img src="images/psacare-but.jpg" style="max-width: 800px; width: 100%;" />
+    </a>
+    <br />
+    <a onclick="myNavigator.pushPage('views/join/silver_gold.html', { animation : 'lift' } )">
+        <img src="images/psaprotect.jpg" style="max-width: 800px; width: 100%;" />
+    </a>
+</ons-page>

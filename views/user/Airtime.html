@@ -1,0 +1,55 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Airtime</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>AIRTIME</span></h2>
+    <div style="padding: 0 20px;">
+        <table>
+            <tr>
+                <td>Points available:</td>
+                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
+            </tr>
+        </table>
+        <p>You can redeem your points and receive the airtime immediately!  As long as you have points available, we will send your airtime to the nominated cell number via a secure SMS – straight away!</p>
+    </div>
+    <div style="padding: 0 20px;">
+        <p>Please complete the fields below to redeem your airtime.</p>
+    </div>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">NETWORK:</div>
+            <div class="formListInput">
+                <select ng-model="selectedAir.network" style="width:100%;" ng-options="sa.network for sa in selectedAirData">
+                </select>
+            </div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">AMOUNT:</div>
+            <div class="formListInput">
+                <select ng-model="selectedAir.airOption" style="width:100%;" ng-options="air.cents as air.rand for air in selectedAir.network.airOptions">
+                </select>
+                <input type="hidden" ng-model="data.airAmount" value="{{selectedAir.airOption}}" />
+            </div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CELL NO:</div><div class="formListInput"><input ng-model="data.CellNum" type="text" class="text-input" placeholder="Cell Number" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large outline" id="btnLogIn" ng-click="redeemAir()" style="width:100%">REDEEM</ons-button>
+        <p>Please note, the monetary value of your points must be >= to the value of your redemption</p>
+    </div>
+</ons-page>

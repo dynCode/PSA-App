@@ -1,0 +1,39 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="center">Welcome</div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="imgBlock hideableL" style="display: block;"><img src="{{Banner1}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner3}}" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-list>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/my_profile.html', { animation : 'slide' } )">
+            MY PROFILE
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/my_card.html', { animation : 'slide' } )">
+            MY CARD
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/balance.html', { animation : 'slide' } )">
+            MY BALANCE
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/discount.html', { animation : 'slide' } )">
+            DISCOUNT VOUCHERS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/points.html', { animation : 'slide' } )">
+            POINTS VOUCHERS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/coupons.html', { animation : 'slide' } )">
+            COUPONS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/redemptions.html', { animation : 'slide' } )">
+            REDEMPTIONS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/contactUs.html', { animation : 'slide' } )">
+            CONTACT US
+        </ons-list-item>
+        <ons-list-item modifier="chevron" ng-click="logout()">
+            LOG OUT
+        </ons-list-item>
+    </ons-list>
+</ons-page>

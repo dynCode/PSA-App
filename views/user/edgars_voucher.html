@@ -1,0 +1,50 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Edgars Gift Cards</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>EDGARS GIFT CARDS</span></h2>
+    <div style="padding: 0 20px;">
+        <table>
+            <tr>
+                <td>Your Balance:</td>
+                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
+            </tr>
+        </table>
+    </div>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">VALUE:</div><div class="formListInput"><select ng-model="data.voucher"><option value="R50.00">R50.00</option><option value="R100.00">R100.00</option><option value="R150.00">R150.00</option></select></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CELL NO:</div><div class="formListInput"><input ng-model="data.CellNum" type="text" class="text-input" placeholder="Cell Number" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large" id="btnLogIn" ng-click="redeemEdgarsGc()" style="width:100%">REDEEM</ons-button>
+        <p><strong>Please Note:</strong> Your gift card SMS will be sent to the nominated cell phone number above. Mahala will process your redemption within 24 hours, for enquiries phone 0860 62 42 52. The monetary value of your points must be greater or equal of your redemption. Terms and conditions apply.</p>
+        <p>
+            Edcon Electronic Gift Card Terms and Conditions:<br>An electronic gift card is an SMS version of the existing gift card and the following additional terms apply:
+            <ul>
+                    <li>If the full value of your Electronic Gift Card is not used on your first purchase, the balance will be transferred to a physical Gift Card.</li>
+                    <li>The Electronic Gift Card cannot be topped up or be SMS'd to someone else.</li>
+                    <li>Should the Electronic Gift Card be deleted or the Customer's cellphone lost/stolen, Edcon will be not be liable for any reimbursement of any nature. The SMS can be resent, but only to the original number.</li>
+                    <li>The usage of the Electronic Gift Card is solely at the risk and discretion of the Customer.</li>
+                    <li>Edcon will not be held responsible for any cellular network service operator's delay in forwarding an Electronic Gift Card to you.</li>
+                    <li>The Electronic Gift Card will only be accepted if a valid Electronic Gift Card number in SMS format is presented to the cashier.</li>
+            </ul>
+        </p>
+    </div>
+</ons-page>

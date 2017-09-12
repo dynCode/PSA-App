@@ -1,0 +1,71 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Discount Voucher</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <div style="padding: 0 20px;">
+        <table width='100%' style='border:none'>
+            <tr>
+                <td colspan='2' style='border-bottom:2px solid #cd242d;' align='center'><img src="http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner_logo}}" width="90%"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align='center'><h3>{{partner_voucher}}</h3></td>
+            </tr>
+            <tr>
+                <td>Terms:</td><td>{{partner_terms}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Tel:</td><td>{{partner_tel}}</td>
+            </tr>
+            <tr>
+                <td>Address:</td><td>{{partner_address}}</td>
+            </tr>
+            <tr>
+                <td>Date:</td><td>{{voucher_date}}</td>
+            </tr>
+            <tr>
+                <td>Loyalty no:</td><td>{{userMpacc}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="margin: 0 20px; text-align: center; background-color: #a9abae;"><h2 style="padding: 5px; color: #fff;">RECORD YOUR DISCOUNT</h2></div>
+    
+    <div style="padding: 0 20px;">
+        <div class="formListLrg">
+            <div class="formListLable">Transaction Value:</div><div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Transaction Value" ng-model="data.pointsTransVal"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Invoice No:</div><div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Invoice No" ng-model="data.pointsTransInv"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable"><br></div><div class="formListInputLrg"><ons-button ngf-select ng-model="data.invoiceSlip" name="file" ngf-pattern="'image/*'" ngf-capture="'camera'" ngf-resize-if="$width > 800 || $height > 800" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-resize="{width: 800, height: 800}" style="background-color: #ccc; color: #000;"><ons-icon icon="fa fa-camera"></ons-icon> UPLOAD YOUR TILL SLIP</ons-button></div>
+        </div>
+        <p>If your transaction value exceeds R500, a till slip picture will be required to verify your transaction.</p>
+        <div style="text-align: center;"><img src='http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/test_1D.php?text={{CardNumber}}' width='270px' /></div>
+        <!--<input type="text" class="text-input" ng-model="data.partId" value="{{partner_id}}">
+        <input type="text" class="text-input" ng-model="data.partName" ng-value="{{partner_name}}">-->
+        <img ng-show="data.invoiceSlip.$valid" ngf-thumbnail="data.invoiceSlip" ngf-size="{width: 100, height: 100, quality: 0.9}">
+        <br>
+        <ons-button modifier="large" id="btnLogIn" ng-click="claimDiscount(data.invoiceSlip)" style="width:100%">SUBMIT</ons-button>
+                
+        <p class="location" style='color:#000'><i>When capturing your till slip, plase ensure that the total transaction value  and invoice number are visible, these details will be confirmed by the retailer. </i></p>
+        <p style='color:#cd242d'><a href="#" onclick="myNavigator.pushPage('views/TandC.html');" style="text-decoration: none; color: #C82126;">TERMS AND CONDITIONS</a> APPLY.</p>
+        
+    </div>
+</ons-page>

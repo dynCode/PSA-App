@@ -1,0 +1,78 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Nominate a Retailer</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>Nominate a Retailer:</span></h2>
+    <p style="padding:20px">You can nominate the shops in your surrounding area where you shop regularly. When enough members request the same shop we will negotiate with them on your behalf and expand the Retail network that provides your with even more tailer made offers.<br /><i>All fields are optional, the more information you provide, the better chance for us to locate and negotiate a discount for you.</i></p>
+    <div class="formShadow">
+        <div class="formListLrg">
+            <div class="formListLable">Loyalty number:</div><div class="formListInputLrg"><input ng-model="data.nom_MPAcc" type="text" class="text-input" placeholder="Loyalty number" value="{{MPacc}}" /></div>
+        </div>
+        <div class="formListLrg">
+            <h4>Retailer Details:</h4>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Retailer Name:</div><div class="formListInputLrg"><input ng-model="data.nom_Name" type="text" class="text-input" placeholder="Retailer Name" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Type of Retailer:</div>
+            <div class="formListInputLrg">
+                <select ng-model="data.nom_Cat" style="width:100%;">
+                    <option value="ACCOMMODATION">ACCOMMODATION</option>
+                    <option value="AUTOMOTIVE">AUTOMOTIVE</option>
+                    <option value="BEAUTY">BEAUTY</option>
+                    <option value="CLOTHING">CLOTHING</option>
+                    <option value="COMMUNICATION">COMMUNICATION</option>
+                    <option value="EDUCATION">EDUCATION</option>
+                    <option value="FINANCIAL">FINANCIAL</option>
+                    <option value="FITNESS">FITNESS</option>
+                    <option value="FOOD">FOOD</option>
+                    <option value="FUNERAL">FUNERAL</option>
+                    <option value="HEALTH">HEALTH</option>
+                    <option value="HOME">HOME</option>
+                    <option value="LEISURE">LEISURE</option>
+                    <option value="RETAIL">RETAIL</option>
+                    <option value="TRAVEL">TRAVEL</option>
+                </select>
+            </div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Contact Person at Store:</div><div class="formListInputLrg"><input ng-model="data.nom_ContactPerson" type="text" class="text-input" placeholder="Contact Person at Store" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Tel no:</div><div class="formListInputLrg"><input ng-model="data.nom_Tel" type="text" class="text-input" placeholder="Tel no" /></div>
+        </div>
+        <div class="formListLrg">
+            <h4>Address:</h4>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Street:</div><div class="formListInputLrg"><input ng-model="data.nom_Str" type="text" class="text-input" placeholder="Street" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Suburb:</div><div class="formListInputLrg"><input ng-model="data.nom_Sub" type="text" class="text-input" placeholder="Suburb" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Province:</div><div class="formListInputLrg"><input ng-model="data.nom_Prov" type="text" class="text-input" placeholder="Province" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Mall Name:</div><div class="formListInputLrg"><input ng-model="data.nom_MallName" type="text" class="text-input" placeholder="Mall Name" /></div>
+        </div>
+        <div style="padding:20px">
+            <ons-button modifier="large" id="btnLogIn" ng-click="nominate()" style="width:100%">SUBMIT</ons-button>
+        </div>
+    </div>
+  
+</ons-page>

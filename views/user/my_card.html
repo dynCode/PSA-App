@@ -1,0 +1,19 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">My Card</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div ons-if-orientation="portrait" style="text-align: center; height: calc(100% - 0px); width: auto;">
+        <img src='http://www.mahala.mobi/newApp/api/class/test_1D.php?text={{CardNumber}}&rotate=270&comid={{comId}}' style="margin: auto;height: 100%;" />
+    </div>
+    <div ons-if-orientation="landscape" style="text-align: center; height: calc(100% - 0px); width: auto;">
+        <img src='http://www.mahala.mobi/newApp/api/class/test_1D.php?text={{CardNumber}}&rotate=0&comid={{comId}}' style="margin: auto;height: 100%;" />
+    </div>
+</ons-page>

@@ -1,0 +1,81 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Become a Retailer</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>Become a Retailer:</span></h2>
+    <p style="padding:20px"><i>You as a Retailer can join the Mahala Platform for FREE and access over 2000 000 members! Simply complete the form below and a Mahala Representative will contact you.</i></p>
+    <div class="formShadow">
+        <div class="formListLrg">
+            <div class="formListLable">Retailer Name:</div><div class="formListInputLrg"><input ng-model="data.bec_Name" type="text" class="text-input" placeholder="Retailer Name" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Category:</div>
+            <div class="formListInputLrg">
+                <select ng-model="data.bec_Cat" style="width:100%;">
+                    <option value="ACCOMMODATION">ACCOMMODATION</option>
+                    <option value="AUTOMOTIVE">AUTOMOTIVE</option>
+                    <option value="BEAUTY">BEAUTY</option>
+                    <option value="CLOTHING">CLOTHING</option>
+                    <option value="COMMUNICATION">COMMUNICATION</option>
+                    <option value="EDUCATION">EDUCATION</option>
+                    <option value="FINANCIAL">FINANCIAL</option>
+                    <option value="FITNESS">FITNESS</option>
+                    <option value="FOOD">FOOD</option>
+                    <option value="FUNERAL">FUNERAL</option>
+                    <option value="HEALTH">HEALTH</option>
+                    <option value="HOME">HOME</option>
+                    <option value="LEISURE">LEISURE</option>
+                    <option value="RETAIL">RETAIL</option>
+                    <option value="TRAVEL">TRAVEL</option>
+                </select>
+            </div>
+        </div>
+        <div class="formListLrg">
+            <h4>Address:</h4>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Street:</div><div class="formListInputLrg"><input ng-model="data.bec_Str" type="text" class="text-input" placeholder="Street" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Suburb:</div><div class="formListInputLrg"><input ng-model="data.bec_Sub" type="text" class="text-input" placeholder="Suburb" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Province:</div><div class="formListInputLrg"><input ng-model="data.bec_Prov" type="text" class="text-input" placeholder="Province" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Are you situated in a mall:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.bec_inmall" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">If yes, Mall Name:</div><div class="formListInputLrg"><input ng-model="data.bec_MallName" type="text" class="text-input" placeholder="Mall Name" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">How many branches:</div><div class="formListInputLrg"><input ng-model="data.bec_NumBranch" type="text" class="text-input" placeholder="How many branches" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Contact Person:</div><div class="formListInputLrg"><input ng-model="data.bec_ContactPerson" type="text" class="text-input" placeholder="Contact Person at Store" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Tel no:</div><div class="formListInputLrg"><input ng-model="data.bec_Tel" type="text" class="text-input" placeholder="Tel no" /></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Email:</div><div class="formListInputLrg"><input ng-model="data.bec_Email" type="text" class="text-input" placeholder="Email" /></div>
+        </div>
+        <div style="padding:20px">
+            <ons-button modifier="large" id="btnLogIn" ng-click="becomeRetailer()" style="width:100%">SUBMIT</ons-button>
+        </div>
+    </div>
+  
+</ons-page>

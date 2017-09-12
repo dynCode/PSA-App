@@ -1,0 +1,47 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Enquiry Form</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>CONTACT ME ABOUT:</span></h2>
+    <p class="text-center">PLEASE ENTER YOUR CONTACT DETAILS BELOW</p>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">PSA Union membership - Refer a friend:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactMembership" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">PSA CARE:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactCare" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">PSA PROTECT:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactProtect" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">NAME:</div><div class="formListInput"><input ng-model="data.contactName" type="text" class="text-input" placeholder="Name" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">SURNAME:</div><div class="formListInput"><input ng-model="data.contactSurname" type="text" class="text-input" placeholder="Surname" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CELL:</div><div class="formListInput"><input ng-model="data.contactCell" type="text" class="text-input" placeholder="Cell number" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">EMAIL:</div><div class="formListInput"><input ng-model="data.contactEmail" type="text" class="text-input" placeholder="Email address" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <p>We will respond to your enquiry within 48 hours.  For any labour related enquiries, please contact the PSA Provincial office closest to you.</p>
+        <ons-button modifier="large" id="btnLogIn" ng-click="contactMe()" style="width:100%">SUBMIT</ons-button>
+    </div>
+</ons-page>

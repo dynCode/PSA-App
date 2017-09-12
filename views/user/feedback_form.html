@@ -1,0 +1,139 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Quick Feedback</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <div style="padding: 0px 20px 20px 10px; text-align: center;">
+        <h4>1. Was the Cashier helpful & friendly?</h4>
+        <ons-row>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/sad.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question1" name="rateCashier" value="0">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/notgood.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question1" name="rateCashier" value="25">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/meh.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question1" name="rateCashier" value="50">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/ok.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question1" name="rateCashier" value="75">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/happy.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question1" name="rateCashier" value="100">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+        </ons-row>
+        <h4>2. Did you find what you were looking for?</h4>
+        <ons-row>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/sad.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question2" name="rateProducts" value="0">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/notgood.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question2" name="rateProducts" value="25">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/meh.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question2" name="rateProducts" value="50">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/ok.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question2" name="rateProducts" value="75">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/happy.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question2" name="rateProducts" value="100">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+        </ons-row>
+        <h4>3. Was Mahala easy peasy lemon squeezy to use?</h4>
+        <ons-row>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/sad.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question3" name="rateService" value="0">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/notgood.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question3" name="rateService" value="25">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/meh.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question3" name="rateService" value="50">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/ok.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question3" name="rateService" value="75">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+            <ons-col>
+                <label class="radio-button centerContent">
+                    <img src="images/happy.png" style="max-width: 203px; width: 100%;" />
+                    <input type="radio" ng-model="data.question3" name="rateService" value="100">
+                    <div class="radio-button__checkmark"></div>
+                </label>
+            </ons-col>
+        </ons-row>
+        <p><br /></p>
+        <div><ons-button modifier="large" class="reg-button" ng-click="sendFeedback()">Submit</ons-button></div>
+        <p>&nbsp;</p>
+        <div><ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/user/welcome.html', { animation : 'lift' } ); menu.closeMenu();">Skip</ons-button></div>
+    </div>
+    
+</ons-page>

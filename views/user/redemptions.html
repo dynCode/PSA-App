@@ -1,0 +1,48 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Redemptions</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>REDEEM YOUR POINTS</span></h2>
+    <div style="padding:20px">
+        <table>
+            <tr>
+                <td>Your Balance:</td>
+                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
+            </tr>
+        </table>
+    </div>
+    <h3 style="color:#ce282c;">Select your REWARD:</h3>
+    <ons-list>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/partner_redemption.html', { animation : 'lift' } ); menu.closeMenu();">
+            RETAILERS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/Airtime.html', { animation : 'lift' } ); menu.closeMenu();">
+            AIRTIME
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/Grocery.html', { animation : 'lift' } ); menu.closeMenu();">
+            GROCERIES
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/giftCard.html', { animation : 'lift' } ); menu.closeMenu();" style="color:#ce282c;">
+            GIFT CARDS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/NuMetro.html', { animation : 'lift' } ); menu.closeMenu();">
+            NU METRO
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/feedachild.html', { animation : 'lift' } ); menu.closeMenu();">
+            FEED A CHILD
+        </ons-list-item>
+    </ons-list>
+</ons-page>

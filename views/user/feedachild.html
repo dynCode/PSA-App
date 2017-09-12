@@ -1,0 +1,37 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Feed a Child</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>DONATE YOUR POINTS</span></h2>
+    <div style="padding: 0 20px;">
+        <table>
+            <tr>
+                <td>POINTS AVAILABLE:</td>
+                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
+            </tr>
+        </table>
+    </div>
+    <img src="images/donate_apple.jpg" style="max-width: 800px; width: 100%;" />
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">DONATE:</div><div class="formListInput"><input ng-model="data.voucher" type="text" class="text-input" placeholder="Voucher Value" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large outline" id="btnLogIn" ng-click="redeemDonateChild()" style="width:100%">SUBMIT</ons-button>
+        <p>Please note, the monetary value of your points must be >= to the value of your redemption</p>
+    </div>
+</ons-page>

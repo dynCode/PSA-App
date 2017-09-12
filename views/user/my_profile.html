@@ -1,0 +1,74 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Your Profile</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>YOUR PROFILE</span></h2>
+    <div style="padding: 0 20px;">
+        <ons-row>
+            <ons-col>First Name:</ons-col>
+            <ons-col>{{FirstName}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Last Name:</ons-col>
+            <ons-col>{{LastName}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Gender:</ons-col>
+            <ons-col>{{gender}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>ID Number:</ons-col>
+            <ons-col>{{IdNumber}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Email Address:</ons-col>
+            <ons-col>{{EmailAddress}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Contact Number:</ons-col>
+            <ons-col>{{ContactNumber}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Address Line 1:</ons-col>
+            <ons-col>{{Addressline1}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Address Line 2:</ons-col>
+            <ons-col>{{Addressline2}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Suburb:</ons-col>
+            <ons-col>{{Suburb}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>City:</ons-col>
+            <ons-col>{{City}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Province:</ons-col>
+            <ons-col>{{Province}}</ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col>Postal Code:</ons-col>
+            <ons-col>{{postalCode}}</ons-col>
+        </ons-row>
+    </div>
+    <ons-list>
+        <ons-list-item modifier="chevron" ng-click="SetupUpdate()">
+            Update Details
+        </ons-list-item>
+    </ons-list>
+</ons-page>

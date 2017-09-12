@@ -1,0 +1,32 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Login</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="imgBlock hideableL" style="display: block;"><img src="{{Banner1}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
+        <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner3}}" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">LOYALTY NO:</div><div class="formListInput"><input ng-model="data.loyaltyNum" type="text" class="text-input" placeholder="Loyalty Number" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">PASSWORD:</div><div class="formListInput"><input ng-model="data.password" type="password" class="text-input" placeholder="Password" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large" id="btnLogIn" ng-click="LogIn()" style="width:100%">LOG IN</ons-button>
+        <p>FIRST TIME? To log in, use your loyalty number printed on your card as your password as well. To change your password contact <a href="tel:+27860021067" style="text-decoration: none; color: #01153a;">0860 021 067</a> or click here to complete a request form.</p>
+        <p>If you can’t remember your password, please click the “Reset your Password” button and follow the easy prompts.</p>
+        <button class="button--large--cta" onclick="myNavigator.pushPage('views/resetpassword.html', { animation : 'slide' } )" style="background-color: #00af88;">Reset your Password</button>
+    </div>
+</ons-page>

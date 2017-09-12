@@ -1,0 +1,43 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Gift Cards</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>GIFT CARDS</span></h2>
+    <div style="padding: 0 20px;">
+        <table>
+            <tr>
+                <td>Your Balance:</td>
+                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
+            </tr>
+        </table>
+    </div>
+    <h3 style="color:#ce282c;">Select your REWARD:</h3>
+    <div class="formShadow">
+        <img src="images/edgars_voucher.jpg" style="max-width: 737px; width: 100%;" onclick="myNavigator.pushPage('views/user/edgars_voucher.html', { animation : 'slide' } )" />
+        <img src="images/active_voucher.jpg" style="max-width: 737px; width: 100%;" onclick="myNavigator.pushPage('views/user/active_voucher.html', { animation : 'slide' } )" />
+        <img src="images/boardmans_voucher.jpg" style="max-width: 737px; width: 100%;" onclick="myNavigator.pushPage('views/user/boardmans_voucher.html', { animation : 'slide' } )" />
+        <table>
+            <tr>
+                <td width="50%"><img src="images/jet_voucher.jpg" style="max-width: 367px; width: 100%;" onclick="myNavigator.pushPage('views/user/jet_voucher.html', { animation : 'slide' } )" /></td>
+                <td width="50%"><img src="images/jetmart_voucher.jpg" style="max-width: 367px; width: 100%;" onclick="myNavigator.pushPage('views/user/jetmart_voucher.html', { animation : 'slide' } )" /></td>
+            </tr>
+            <tr>
+                <td width="50%"><img src="images/redsquare_voucher.jpg" style="max-width: 367px; width: 100%;" onclick="myNavigator.pushPage('views/user/redsquare_voucher.html', { animation : 'slide' } )" /></td>
+                <td width="50%"><img src="images/cna_voucher.jpg" style="max-width: 367px; width: 100%;" onclick="myNavigator.pushPage('views/user/cna_voucher.html', { animation : 'slide' } )" /></td>
+            </tr>
+        </table>
+    </div>
+</ons-page>
