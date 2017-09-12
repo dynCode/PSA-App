@@ -2,13 +2,15 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.psaclub"
-        versionCode = "01" 
-        version   = "0.1">
+        versionCode = "100" 
+        version   = "1.0.0">
 
     <name>PSAClub</name>
 
     <description>
-        PSACLUB is a membership group within Governement that belongs to the PSA Union (Public Servants Association).  All PSACLUB members receive rebates & benefits by spending within a selected Retailer Network nationally.  The PSACLUB and Retailer Network is powered by Mahala Loyalty Programme (PTY) Ltd.
+        PSACLUB is a membership group within Governement that belongs to the PSA Union (Public Servants Association). 
+        All PSACLUB members receive rebates & benefits by spending within a selected Retailer Network nationally.  
+        The PSACLUB and Retailer Network is powered by Mahala Loyalty Programme (PTY) Ltd.
     </description>
 
     <author href="http://www.myitmanager.co.za" email="support@myitmanager.co.za">
