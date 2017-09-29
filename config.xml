@@ -81,7 +81,6 @@
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-whitelist" />
-    <plugin name="cordova-plugin-camera" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
