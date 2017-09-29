@@ -1,5 +1,5 @@
 <ons-page>
-    <ons-toolbar>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
@@ -11,7 +11,9 @@
         </div>
     </ons-toolbar>
     <div class="topBanner">
-        <img src="images/app_header1.png" style="max-width: 800px; width: 100%;" />
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
     </div>
     <h2 class="myHeader"><span>VOUCHER CATEGORIES:</span></h2>
     <ons-list>

@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.psaclub"
-        versionCode = "10" 
-        version   = "1.0.0">
+        versionCode = "101" 
+        version   = "1.0.1">
 
     <name>PSA Club</name>
 
@@ -81,6 +81,7 @@
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-plugin-camera" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

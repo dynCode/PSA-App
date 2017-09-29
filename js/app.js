@@ -78,6 +78,7 @@
         $scope.CardNumber = '';
         $scope.comId = '';
         $scope.commun = '';
+        $scope.tokenBalance = '';
         
         //Partner Data
         $scope.partner_id = '';
@@ -310,9 +311,31 @@
                         $scope.CardNumber = '62786401'+user;
                         $scope.comId = data['comId'];
                         $scope.commun = data['commun'];
+                        $scope.tokenBalance = data['tokenBalance'];
                         
                         modal.show();
                         $scope.data.errorCode = 'Collecting your data...';
+                        /*
+                        if (user == pass) {
+                            ons.notification.confirm({
+                                message: 'We have noticed that your password is the same as your member number. We recommend that you update your password.',
+                                callback: function(idx) {
+                                    switch (idx) {
+                                        case 0:
+                                            modal.hide();
+                                            $scope.data = [];
+                                            myNavigator.pushPage('views/user/welcome.html', { animation : 'fade' });
+                                          break;
+                                        case 1:
+                                            modal.hide();
+                                            $scope.data = [];
+                                            myNavigator.pushPage('views/user/updatepassword.html', { animation : 'fade' });
+                                          break;
+                                    }
+                                }
+                            });
+                        }
+                        */
                         
                         $timeout(function(){
                             modal.hide();
@@ -1239,26 +1262,33 @@
         
         //contact us form function
         $scope.contactMe = function() {
-            var contactMembership = $scope.data.contactMembership;
+            var contactRefer = $scope.data.contactRefer;
             var contactCare = $scope.data.contactCare;
             var contactProtect = $scope.data.contactProtect;
+            var contactUpdate = $scope.data.contactUpdate;
+            var contactCard = $scope.data.contactCard;
             var contactName = $scope.data.contactName;
             var contactSurname = $scope.data.contactSurname;
+            var contactId =- $scope.data.contactId;
             var contactCell = $scope.data.contactCell;
             var contactEmail = $scope.data.contactEmail;
-            var contactUpdate = $scope.data.contactUpdate;
-            var contactId = $scope.data.contactId;
+            var contactTime = $scope.data.contactTime;
+            var contactFName = $scope.data.contactFName;
+            var contactFSurname = $scope.data.contactFSurname;
+            var contactFCell = $scope.data.contactFCell;
+            var contactFTime = $scope.data.contactFTime;
             
             if (contactName && contactSurname && contactCell && contactEmail) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath+'/app-results.php', { "reqType" : "contactUs", "membership" : contactMembership, "Care" : contactCare, "Protect" : contactProtect, "cUpdate" : contactUpdate, "cName" : contactName, "cSurname" : contactSurname, "cID" : contactId, "cCell" : contactCell, "cEmail" : contactEmail })
+                $http.post($scope.apiPath+'app-results.php', { "reqType" : "contactUs", "name" : contactName, "surname" : contactSurname, "idnum" : contactId, "cell" : contactCell, "email" : contactEmail, "callTime" : contactTime, "refer" : contactRefer, "care" : contactCare, "protect" : contactProtect, 'update' : contactUpdate, 'card' : contactCard, 'FName' : contactFName, 'FSurname' : contactFSurname, 'FCell' : contactFCell, 'FTime' : contactFTime})
                 .success(function(data, status){
                     if (data['error'] == 0) {
                         modal.hide();
                         $scope.data.result = data['html'];
                         $scope.data.errorCode = data['html'];
                         modal.show();
+                        $scope.data = [];
                         myNavigator.pushPage('views/home.html', { animation : 'fade'});
                     } else {
                         modal.hide();
@@ -1908,20 +1938,32 @@
 })();
 
 // normal JS
+// check if obejct is empty 
+function isNotEmpty(myObject) {
+    for(var key in myObject) {
+        if (myObject.hasOwnProperty(key)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // direction = boolean value: true or false. If true, go to NEXT slide; otherwise go to PREV slide
 
 function toggleSlide(direction, className) {
     var elements = document.getElementsByClassName(className); // gets all the "slides" in our slideshow
     // Find the LI that's currently displayed
-    //console.log('Elements', elements);
-    var visibleID = getVisible(elements);
-    elements[visibleID].style.display = "none"; // hide the currently visible LI
-    if(!direction) {
-        var makeVisible = prev(visibleID, elements.length); // get the previous slide
-    } else {
-        var makeVisible = next(visibleID, elements.length); // get the next slide
+    // console.log('Elements', elements);
+    if (isNotEmpty(elements)) {
+        var visibleID = getVisible(elements);
+        elements[visibleID].style.display = "none"; // hide the currently visible LI
+        if(!direction) {
+            var makeVisible = prev(visibleID, elements.length); // get the previous slide
+        } else {
+            var makeVisible = next(visibleID, elements.length); // get the next slide
+        }
+        elements[makeVisible].style.display = "block"; // show the previous or next slide
     }
-    elements[makeVisible].style.display = "block"; // show the previous or next slide
 }
 function getVisible(elements) {
     var visibleID = -1;
@@ -1945,6 +1987,8 @@ var interval = 5000; // You can change this value to your desired speed. The val
 var switching = setInterval("toggleSlide(true,'hideable')", interval);
 var switching = setInterval("toggleSlide(true,'hideableL')", interval);
 var switching = setInterval("toggleSlide(true,'hideableW')", interval);
+var switching = setInterval("toggleSlide(true,'hideableReg')", interval);
+var switching = setInterval("toggleSlide(true,'hideablePro')", interval);
 
 // Barcode scanner
 function scanBarcodeRegShop(){
