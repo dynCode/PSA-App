@@ -87,6 +87,7 @@
         $scope.partner_voucher = '';
         $scope.partner_terms = '';
         $scope.partner_tel = '';
+        $scope.partner_web = '';
         $scope.partner_address = '';
         $scope.voucher_date = '';
         $scope.conImages = '';
@@ -403,12 +404,8 @@
                         },'2000');
                     } else {
                         modal.hide();
-                        ons.notification.alert({
-                            message: data['html'],
-                            title: 'Error',
-                            buttonLabel: 'OK',
-                            animation: 'default'
-                        });
+                        $scope.data.errorCode = data['html'];
+                        modal.show();
                     }
                 })
                 .error(function(data, status) {
@@ -417,12 +414,9 @@
                     modal.show();
                 });
             } else {
-                ons.notification.alert({
-                    message: 'Please fill in your membership number.',
-                    title: 'Oops!',
-                    buttonLabel: 'OK',
-                    animation: 'default'
-                });
+                modal.hide();
+                $scope.data.errorCode = 'Please fill in your membership number.';
+                modal.show();
             }
         };
         
@@ -453,12 +447,8 @@
                                 },'2000');
                             } else {
                                 modal.hide();
-                                ons.notification.alert({
-                                    message: data['html'],
-                                    title: 'Error',
-                                    buttonLabel: 'OK',
-                                    animation: 'default'
-                                });
+                                $scope.data.errorCode = data['html'];
+                                modal.show();
                             }
                         })
                         .error(function(data, status) {
@@ -467,28 +457,77 @@
                             modal.show();
                         });
                     } else {
-                        ons.notification.alert({
-                            message: 'Your new passwords did not match.',
-                            title: 'Oops!',
-                            buttonLabel: 'OK',
-                            animation: 'default'
-                        });
+                        modal.hide();
+                        $scope.data.errorCode = 'Your new passwords did not match.';
+                        modal.show();
                     }
                 } else {
-                    ons.notification.alert({
-                        message: 'Password not long enough.',
-                        title: 'Oops!',
-                        buttonLabel: 'OK',
-                        animation: 'default'
-                    });
+                    modal.hide();
+                    $scope.data.errorCode = 'Password not long enough.';
+                    modal.show();
                 }
             } else {
-                ons.notification.alert({
-                    message: 'Please fill all the fields.',
-                    title: 'Oops!',
-                    buttonLabel: 'OK',
-                    animation: 'default'
-                });
+                modal.hide();
+                $scope.data.errorCode = 'Please fill all the fields.';
+                modal.show();
+            }
+        };
+        
+        $scope.updateCurPass = function () {
+            var MPAcc = $scope.userMpacc;
+            var oldPass = $scope.userPass;
+            var password = $scope.data.pu_newPass;
+            var re_pass = $scope.data.pu_newPassR;
+            
+            console.log('MPAcc',MPAcc);
+            console.log('oldPass',oldPass);
+            console.log('password',password);
+            console.log('re_pass',re_pass);
+            
+            if (MPAcc, oldPass, password, re_pass) {
+                if (password.length >= 5) {
+                    if (password === re_pass) {
+
+                        modal.show();
+                        $scope.data.errorCode = 'Processing, please wait...';
+                        $http.post(apiPath+'/updatepass.php', {"member" : MPAcc, "password" : password, "oldpassword" : oldPass })
+                        .success(function(data, status){
+                            if (data['error'] == 0) {
+
+                                modal.show();
+                                $scope.data.errorCode = data['html'];
+
+                                $timeout(function(){
+                                    modal.hide();
+                                    $scope.data = [];
+                                    $scope.userPass = password;
+                                    myNavigator.resetToPage('views/users\/welcome.html', { animation : 'fade' });
+                                },'2000');
+                            } else {
+                                modal.hide();
+                                $scope.data.errorCode = data['html'];
+                                modal.show();
+                            }
+                        })
+                        .error(function(data, status) {
+                            modal.hide();
+                            $scope.data.errorCode = 'Request failed';
+                            modal.show();
+                        });
+                    } else {
+                        modal.hide();
+                        $scope.data.errorCode = 'Your new passwords did not match.';
+                        modal.show();
+                    }
+                } else {
+                    modal.hide();
+                    $scope.data.errorCode = 'Password not long enough.';
+                    modal.show();
+                }
+            } else {
+                modal.hide();
+                $scope.data.errorCode = 'Please fill all the fields.';
+                modal.show();
             }
         };
         
@@ -1070,6 +1109,7 @@
                 $scope.partner_voucher = data[0]['partner_voucher'];
                 $scope.partner_terms = data[0]['partner_terms'];
                 $scope.partner_tel = data[0]['partner_tel'];
+                $scope.partner_web = data[0]['partner_web'];
                 $scope.partner_address = data[0]['partner_address'];
                 $scope.voucher_date = today;
                 $scope.conImages = 'http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/partnerLogo.png';
@@ -1239,6 +1279,7 @@
                 $scope.partner_voucher = data[0]['partner_voucher'];
                 $scope.partner_terms = data[0]['partner_terms'];
                 $scope.partner_tel = data[0]['partner_tel'];
+                $scope.partner_web = data[0]['partner_web'];
                 $scope.partner_address = data[0]['partner_address'];
                 $scope.voucher_date = today;
                 $scope.conImages = 'http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/partnerDisLogo.png';
@@ -1418,6 +1459,7 @@
         //Coupons List Builder
         $http.get(apiPath+'/coupon-list.php')
         .success(function (result, status) {
+            console.log('Coupon List', result);
             $scope.couponList = result;
         })
         .error(function(result, status) {
@@ -1474,6 +1516,7 @@
                 $scope.partner_voucher = data[0]['partner_voucher'];
                 $scope.partner_terms = data[0]['partner_terms'];
                 $scope.partner_tel = data[0]['partner_tel'];
+                $scope.partner_web = data[0]['partner_web'];
                 $scope.partner_address = data[0]['partner_address'];
                 $scope.voucher_date = today;
                 
