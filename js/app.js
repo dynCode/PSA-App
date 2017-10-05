@@ -1322,7 +1322,7 @@
             if (contactName && contactSurname && contactCell && contactEmail) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post($scope.apiPath+'app-results.php', { "reqType" : "contactUs", "name" : contactName, "surname" : contactSurname, "idnum" : contactId, "cell" : contactCell, "email" : contactEmail, "callTime" : contactTime, "refer" : contactRefer, "care" : contactCare, "protect" : contactProtect, 'update' : contactUpdate, 'card' : contactCard, 'FName' : contactFName, 'FSurname' : contactFSurname, 'FCell' : contactFCell, 'FTime' : contactFTime})
+                $http.post(apiPath+'/app-results.php', { "reqType" : "contactUs", "name" : contactName, "surname" : contactSurname, "idnum" : contactId, "cell" : contactCell, "email" : contactEmail, "callTime" : contactTime, "refer" : contactRefer, "care" : contactCare, "protect" : contactProtect, 'update' : contactUpdate, 'card' : contactCard, 'FName' : contactFName, 'FSurname' : contactFSurname, 'FCell' : contactFCell, 'FTime' : contactFTime})
                 .success(function(data, status){
                     if (data['error'] == 0) {
                         modal.hide();
@@ -1923,7 +1923,7 @@
             $scope.myLat = $scope.map.center.A;
             $scope.myLng = $scope.map.center.F;
             
-            $http.post(apiPath+'/mapMarkers.php', {"lat" : $scope.myLat, "lng" : $scope.myLng, "radius" : $scope.mapRadius, "type" : $scope.partnerType, cat : "%"}).success( function(stores) {
+            $http.post('http://www.psaclub.mobi/api/mapMarkers.php', {"lat" : $scope.myLat, "lng" : $scope.myLng, "radius" : $scope.mapRadius, "type" : $scope.partnerType, cat : "%"}).success( function(stores) {
                 var markers = [];
                 console.log(stores);
                 $scope.partnerList = stores;
