@@ -1328,9 +1328,14 @@
                         modal.hide();
                         $scope.data.result = data['html'];
                         $scope.data.errorCode = data['html'];
+                        
                         modal.show();
-                        $scope.data = [];
-                        myNavigator.pushPage('views/home.html', { animation : 'fade'});
+                        $timeout(function(){
+                            modal.hide();
+                            $scope.data = [];
+                            myNavigator.resetToPage('views/home.html', { animation : 'fade' });
+                        },'2000');
+                        
                     } else {
                         modal.hide();
                         $scope.data.result = data['html'];
