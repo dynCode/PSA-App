@@ -1,0 +1,38 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="center">Welcome</div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+        </div>
+    </div>
+    <ons-list>
+        
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/load_points.html', { animation : 'slide' } )">
+            Load Points
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/load_discount.html', { animation : 'slide' } )">
+            Load Discount
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/load_redemption.html', { animation : 'slide' } )">
+            Load Redemption
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/enroll_member.html', { animation : 'slide' } )">
+            Enroll New Member
+        </ons-list-item>
+        
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/customer_feedback.html', { animation : 'slide' } )">
+            Customer Feedback
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/overview_report.html', { animation : 'slide' } )">
+            Overview Report
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/retail/request_campaign.html', { animation : 'slide' } )">
+            Request a Campaign
+        </ons-list-item>
+        <ons-list-item modifier="chevron" ng-click="retailLogout()">
+            Log Out
+        </ons-list-item>
+    </ons-list>
+</ons-page>

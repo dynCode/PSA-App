@@ -1,0 +1,49 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Get Freebies</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div><img src="images/{{retailId}}.jpg" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>GET FREEBIES</span></h2>
+    <div ng-hide="sentOtp">
+        <div style="padding:5px 20px;">If the space below is full of emptiness, you have not collected enough stamps!  Select your Freebie and complete the fields below. Once you have selected a Freebie, an OTP pin will be provided by your cashier to conclude the transaction</div>
+        <div style="padding:5px 20px; color: rgb(206,40,44);"><strong>You have:</strong></div>
+    </div>
+    <div class="stamps">
+        <div ng-repeat="list in freebiesList track by $index" style="text-align: center;" ng-click="markFreebie($index)">
+            <img src="{{list.image2URL}}" width="99%"><br><small style="font-size: 12px">Expires: {{list.freebieExpiry}}</small>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div ng-hide="sentOtp">
+        <div style="padding:0px 20px;">Fill in the Shop Approval Code and the Invoice No. to collect your Stamps!</div>
+        <div class="formListLrg">
+            <div class="formListLable">Shop Approval Code:</div>
+            <div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Enter Code" ng-model="data.cashierCode"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Invoice No:</div>
+            <div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Invoice No" ng-model="data.invNo"></div>
+        </div>
+        <p>&nbsp;</p>
+        <ons-button modifier="large" class="reg-button" ng-click="processFreebies()">SUBMIT</ons-button>
+    </div>
+    <div ng-show="sentOtp">
+        <div style="padding:0px 20px;">Fill in the OTP pin provided by your cashier to complete your transaction</div>
+        <div class="formListLrg">
+            <div class="formListLable">OTP Pin:</div>
+            <div class="formListInputLrg"><input type="text" class="text-input"  placeholder="OTP Pin" ng-model="data.optPin"></div>
+        </div>
+        <p>&nbsp;</p>
+        <ons-button modifier="large" class="reg-button" ng-click="processFreebiesOtp()">SUBMIT</ons-button>
+    </div>
+</ons-page>

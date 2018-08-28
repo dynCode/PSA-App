@@ -1,0 +1,56 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Load Redemption</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <div style="padding: 0 20px;">
+        <table width='100%' style='border:none'>
+            <tr>
+                <td colspan='2' style='border-bottom:2px solid #cd242d;' align='center'><img src="https://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner_logo}}" style="max-width: 380px; width: 90%;"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="margin: 0 20px; text-align: center; background-color: #a9abae;"><h2 style="padding: 5px; color: #fff;">LOAD REDEMPTION</h2></div>
+    
+    <div style="padding: 0 20px;">
+        <div class="formListLrg">
+            <div class="formListLable">Member Number:</div><div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Member Number" ng-model="data.memNumber"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Transaction Value:</div><div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Transaction Value" ng-model="data.pointsTransVal"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable">Invoice No:</div><div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Invoice No" ng-model="data.pointsTransInv"></div>
+        </div>
+        <div class="formListLrg">
+            <div class="formListLable"><br></div><div class="formListInputLrg"><ons-button ngf-select ng-model="data.invoiceSlip" name="file" ngf-pattern="'image/*'" ngf-capture="'camera'" ngf-resize-if="$width > 800 || $height > 800" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-resize="{width: 800, height: 800}" style="background-color: #ccc; color: #000;"><ons-icon icon="fa fa-camera"></ons-icon> UPLOAD YOUR TILL SLIP</ons-button></div>
+        </div>
+    </div>
+    <div style="margin: 0 10px; background-color: #cccccc;">
+        <div style="padding: 10px;">
+            <p>Present your phone to the cashier to approve the transaction.</p>
+            <div class="formListLrg">
+                <div class="formListLable">CASHIER CODE:</div>
+                <div class="formListInputLrg"><input type="number" class="text-input" ng-change="" placeholder="Enter Code" ng-model="data.cashierCode"></div>
+            </div>
+            <ons-button modifier="large" id="btnLogIn" ng-click="retailGenereateOtp(data.invoiceSlip)" style="width:100%">GENERATE OTP</ons-button>  
+            <div class="formListLrg">
+                <div class="formListLable">OTP:</div>
+                <div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Enter Code" ng-model="data.remOTP"></div>
+            </div>
+            <p class="location" style='color:#000'><i>Please enter the OTP pin provided by the Store Cashier/Manager</i></p>
+        </div>
+    </div>
+    <div style="padding: 0 20px;">
+        <ons-button modifier="large" id="btnLogIn" ng-click="retailsSendOtp()" style="width:100%">SUBMIT</ons-button>
+    </div>
+</ons-page>

@@ -1,0 +1,35 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Overview Report</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <div class="formList"><strong>1. Report for:</strong> {{reprtMonth}}</div>
+    <div style="padding: 0px 20px 20px 10px;">
+        New Members: <strong>{{newMembers}}</strong><br />
+        Total Members: <strong>{{totalMembers}}</strong><br />
+    </div>
+    <div class="formList"><strong>2. Sales Information:</strong></div>
+    <div style="padding: 0px 20px 20px 10px;">
+        Total of Members active: <strong>{{membersActive}}</strong><br />
+        Total Transactions processed: <strong>{{totalTransactions}}</strong><br />
+        Average Sales per Member: <strong>{{avarageSales}}</strong><br />
+        <!--Forgein Members Active: <strong>{{forMembers}}</strong><br />
+        Forgein Member Transactions: <strong>{{forTransaction}}</strong><br />-->
+        Total Sales: <strong>{{totalSales}}</strong><br />
+    </div>
+    <div class="formList"><strong>3. Redemption:</strong></div>
+    <div style="padding: 0px 20px 20px 10px;">
+        Total Member Redemptions: <strong>{{totalMemRedemp}}</strong><br />
+        Total Value of Redemptions: <strong>{{totalRedempVal}}</strong><br />
+        Total Pending Redemptions: <strong>{{totalPendRedemp}}</strong><br />
+        Total Paidout Redemptions: <strong>{{totalPaidRedemp}}</strong><br />
+    </div>
+</ons-page>

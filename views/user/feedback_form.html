@@ -1,22 +1,23 @@
-<ons-page>
+<ons-page ng-init="createFeedbackForm()">
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Quick Feedback</div>
         <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
         </div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
     <div style="padding: 0px 20px 20px 10px; text-align: center;">
-        <h4>1. Was the Cashier helpful & friendly?</h4>
+        <h4>{{feedbackQ1}}</h4>
         <ons-row>
             <ons-col>
                 <label class="radio-button centerContent">
@@ -54,7 +55,7 @@
                 </label>
             </ons-col>
         </ons-row>
-        <h4>2. Did you find what you were looking for?</h4>
+        <h4>{{feedbackQ2}}</h4>
         <ons-row>
             <ons-col>
                 <label class="radio-button centerContent">
@@ -92,7 +93,7 @@
                 </label>
             </ons-col>
         </ons-row>
-        <h4>3. Was Mahala easy peasy lemon squeezy to use?</h4>
+        <h4>{{feedbackQ3}}</h4>
         <ons-row>
             <ons-col>
                 <label class="radio-button centerContent">

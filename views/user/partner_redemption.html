@@ -1,34 +1,44 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
-        <div class="center">Partner Redemptions</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="center">Search for a deal</div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
-        <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
-        </div>
+        <div><img src="{{Banner1}}" style="max-width: 800px; width: 100%;" /></div>
     </div>
-    <h2 class="myHeader"><span>SEARCH</span></h2>
-    <h2 class="myHeader">SELECT YOUR SEARCH CRITERIA:</h2>
-    <ons-list>
-        <ons-list-item modifier="chevron" ng-click="pointsName()">
-            PARTNER NAME
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="pointsCategory()">
-            CATEGORY
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="pointsProvince()">
-            REGION
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="pointsCloseBy()">
-            PARTNERS CLOSE BY
-        </ons-list-item>
-    </ons-list>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <!--<h2 class="myHeader"><span>Quick Search</span></h2>
+    <div style="padding:20px">
+        <div class="formListInputLrg"><input type="text" class="text-input" ng-model="data.searchPartName" placeholder="Enter Retailer name"></div>
+        <br>
+        <ons-button modifier="large" id="btnLogIn" ng-click="searchPRName()" style="width:100%">Quick Search</ons-button>
+    </div>-->
+    <div style="padding:20px">
+        Your e-Wallet Balance:
+        <h3 style="border: 1px solid #0b67a0; background-color: #d1d4da">R {{currentRands}}</h3>
+        <p>Your e-Wallet contains all your points that is converted to Rands. You can spend your e-Wallet on anything your heart desires, simply phone us on 0860 62 42 52 or quick shop below:<br><a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a></p>
+    </div>
+    <h2 class="myHeader">SEARCH FOR A DEAL</h2>
+    <div class="search">
+        <ons-list>
+            <ons-list-item modifier="chevron" ng-click="pointsRemName()">
+                <strong>Name:</strong><br>Shop listed Alphabetically
+            </ons-list-item>
+            <ons-list-item modifier="chevron" ng-click="pointsRemCategory()">
+               <strong>Category:</strong><br>Shop listed by Category
+            </ons-list-item>
+            <ons-list-item modifier="chevron" ng-click="pointsRemProvince()">
+                <strong>Region:</strong><br>Shop listed by Region
+            </ons-list-item>
+            <ons-list-item modifier="chevron" ng-click="pointsRemCloseBy()">
+                <strong>Close By:</strong><br>Shop close to you (GPS location)
+            </ons-list-item>
+        </ons-list>
+    </div>
 </ons-page>

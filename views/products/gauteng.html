@@ -1,0 +1,37 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Properties | Gauteng</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+    </div>
+    <div style="padding:20px"><h2>GAUTENG PROPERTIES</h2></div>
+    <ons-list class="dropShadow">
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/azaadvilleGardens.html', { animation : 'slide' } )">
+            AZAADVILLE GARDENS
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/cyrstalPark.html', { animation : 'slide' } )">
+            CRYSTAL PARK
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/glenway.html', { animation : 'slide' } )">
+            GLENWAY
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/hultonPark.html', { animation : 'slide' } )">
+            HULTON PARK
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/kirkneyEstate.html', { animation : 'slide' } )">
+            KIRKNEY ESTATE
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/products/kirkneyPark.html', { animation : 'slide' } )">
+            KIRKNEY VILLIAGE
+        </ons-list-item>
+    </ons-list>
+</ons-page>

@@ -1,30 +1,29 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
-        <div class="center">Partners</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="center">Vouchers</div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
-        <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
-        </div>
+        <div><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
     </div>
-    <h2 class="myHeader"><span>PARTNERS / RETAILERS</span></h2>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h3>Some of our Partners / Retailers</h3>
+    <img src="images/voucher_partners.jpg" style="max-width: 800px; width: 100%;" />
     <ons-list>
         <ons-list-item modifier="chevron" ng-click="getPointCatList();">
-            POINTS PARTNERS
+            Points Vouchers
         </ons-list-item>
         <ons-list-item modifier="chevron" ng-click="getDiscountCatList();">
-            DISCOUNT PARTNERS
+            Discount Vouchers
         </ons-list-item>
     </ons-list>
-    <div style="padding: 0 20px;">
+    <!--<div style="padding: 0 20px;">
         <p>Our Partners / Retailers will provide either a discount or points on your purchase. Feel free to browse our Partners to see how much you can SAVE!!! Please remember to login in order to download your vouchers and always have your membership card present at Point of Sale.</p>
-    </div>
+    </div>-->
 </ons-page>

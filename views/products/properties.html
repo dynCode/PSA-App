@@ -1,0 +1,38 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Properties</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+    </div>
+	<h2 class="myHeader"><span>PROPERTIES</span></h2>
+	<div class="search">
+		<ons-list class="dropShadow">
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/new-development/residential/?category=Affordable%20Housing%20Development','_system','')">
+				Affordable Developments
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/new-development/residential/?category=Apartment%20Block,Coastal%20Estate,Equestrian%20Estate,Game%20Farm%20Estate,Golf%20Estate,Nature%20Estate,Residential%20Estate,Wine%20Estate','_system','')">
+				Luxury Homes
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/new-development/residential/?category=Retirement%20Estate','_system','')">
+				Retirement
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/residential/for-sale/','_system','')">
+				Residential Sales
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/residential/to-let/','_system','')">
+				Rentals
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/results/commercial/for-sale/','_system','')">
+				Commercial
+			</ons-list-item>
+			<ons-list-item modifier="chevron" onclick="window.open('https://www.msp.property/list-your-property/','_system','')">
+				List my property
+			</ons-list-item>
+		</ons-list>
+	</div>
+</ons-page>

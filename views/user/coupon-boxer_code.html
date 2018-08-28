@@ -1,0 +1,27 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Coupons</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>COUPONS</span></h2>
+    <div style="padding: 0 20px;">
+        <img src="images/Boxer.jpg" style="max-width: 380px; width: 100%;" />
+        <h3 style="text-align: center">MY COUPON CODE</h3>
+        <h1 modifier="large outline" id="btnLogIn" style="text-align: center">{{couponCode}}</h1>
+        <p>Present this Coupon Code to the cashier before you pay and your savings will be deducted from your basket / total bill.</p>
+        <p>This Coupon Code is only valid for 24 hours, should the time limit be exceeded you can simply request a new Coupon Code. </p>
+        <p><strong>Terms and conditions apply.</strong></p>
+    </div>
+</ons-page>

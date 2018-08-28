@@ -1,0 +1,40 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Collect Stamps</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div><img src="images/{{retailId}}.jpg" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>COLLECT STAMPS</span></h2>
+    <div style="padding:5px 20px;">Click on the icon below to collect your stamps</div>
+    <div class="stamps">
+        <div ng-repeat="list in stampList track by $index" style="text-align: center;" ng-click="countStamps($index)">
+            <img src="{{list.img}}" width="99%">
+        </div>
+    </div>
+    <div class="formListLrg">
+        <div class="formListLable">You have Selected  #</div>
+        <div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Stamp Count" ng-model="stampCount"></div>
+    </div>
+    <p>&nbsp;</p>
+    <div style="padding:0px 20px;">Fill in the Shop Approval Code and the Invoice No. to collect your Stamps!</div>
+    <div class="formListLrg">
+        <div class="formListLable">Shop Approval Code:</div>
+        <div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Enter Code" ng-model="data.cashierCode"></div>
+    </div>
+    <div class="formListLrg">
+        <div class="formListLable">Invoice No:</div>
+        <div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Invoice No" ng-model="data.invNo"></div>
+    </div>
+    <p>&nbsp;</p>
+    <ons-button modifier="large" class="reg-button" ng-click="processStamps()">SUBMIT</ons-button>
+    <div style="padding:20px;">Terms & Conditions apply.</div>
+</ons-page>

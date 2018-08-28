@@ -1,13 +1,10 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            
         </div>
         <div class="center">TERMS & CONDITIONS</div>
         <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
         </div>
     </ons-toolbar>
     <div class="topBanner">
@@ -19,14 +16,14 @@
     <div style="padding: 0 20px;">
         <div ng-bind-html="tcPage | to_trusted"></div>
     </div>
-    <ons-list>
+    <!--<ons-list>
         <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/mdis.html', { animation : 'slide' } );">
             Mahala Disclosures
         </ons-list-item>
         <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/tbfsdis.html', { animation : 'slide' } );">
             TBFS Disclosures
         </ons-list-item>
-    </ons-list>
+    </ons-list>-->
 </ons-page>
 
 

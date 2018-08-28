@@ -1,21 +1,21 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
-        <div class="center">Your Balance</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="center">Balance</div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
-    <h2 class="myHeader"><span>YOUR BALANCE</span></h2>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>BALANCE</span></h2>
     <div class="formShadow">
         <div class="formList">
             <div class="formListLable">CURRENT BALANCE:</div><div class="formListRight" style="width: 40%;">{{currentUnits}}</div>
@@ -27,8 +27,11 @@
             <div class="formListLable">USED POINTS:</div><div class="formListRight" style="width: 40%;">{{totalUsed}}</div>
         </div>
         <div class="formList">
-            <div class="formListLable">TOKEN BALANCE:</div><div class="formListRight" style="width: 40%;">{{tokenBalance}}</div>
+            <div class="formListLable">DISCOUNT TOTAL:</div><div class="formListRight" style="width: 40%;">R {{totalDiscount}}</div>
         </div>
+        <!--<div class="formList">
+            <div class="formListLable">TOKEN BALANCE:</div><div class="formListRight" style="width: 40%;">{{tokenBalance}}</div>
+        </div>-->
         <div class="formList">
             <div class="formListLable">TIER LEVEL:</div><div class="formListRight" style="width: 40%;">{{tierDes}}</div>
         </div>
@@ -41,7 +44,7 @@
     </div>
     <ons-list>
         <ons-list-item modifier="chevron" ng-click="myTransactions()">
-            YOUR LAST 10 TRANSACTIONS
+            MY LAST 10 TRANSACTIONS
         </ons-list-item>
     </ons-list>
 </ons-page>

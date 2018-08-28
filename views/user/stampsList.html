@@ -1,0 +1,33 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Collect Stamps</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div><img src="images/{{retailId}}.jpg" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>COLLECT STAMPS</span></h2>
+    <ons-list>
+        <ons-list-item modifier="partnerList" ng-repeat="list in tokenList" ng-click="collectFreeStamps(list.tokenCode)">
+            <ons-row>
+                <ons-col width="80%">
+                    <strong>{{list.tokenDescr}}</strong>
+                </ons-col>
+                <ons-col width="10%">
+                    {{list.value}}/{{list.valueRequired}}
+                </ons-col>
+                <ons-col width="10%"><i class="fa fa-chevron-right" aria-hidden="true" style="color: rgb(206,40,44);"></i></ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+    <h2 class="myHeader"><span>GET FREEBIES</span></h2>
+    <ons-button modifier="large" class="reg-button" ng-click="myFreebies()">Check your Freebies</ons-button>
+    <div style="padding:20px;">Terms & Conditions apply.</div>
+</ons-page>

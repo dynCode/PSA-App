@@ -1,28 +1,24 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Airtime</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
     <h2 class="myHeader"><span>AIRTIME</span></h2>
     <div style="padding: 0 20px;">
-        <table>
-            <tr>
-                <td>Points available:</td>
-                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
-            </tr>
-        </table>
+        Your e-Wallet Balance:
+        <h3 style="border: 1px solid #0b67a0; background-color: #d1d4da">R {{currentRands}}</h3>
         <p>You can redeem your points and receive the airtime immediately!  As long as you have points available, we will send your airtime to the nominated cell number via a secure SMS – straight away!</p>
     </div>
     <div style="padding: 0 20px;">
@@ -49,7 +45,7 @@
         </div>
     </div>
     <div style="padding:20px">
-        <ons-button modifier="large outline" id="btnLogIn" ng-click="redeemAir()" style="width:100%">REDEEM</ons-button>
+        <ons-button modifier="large" id="btnLogIn" ng-click="redeemAir()" style="width:100%">REDEEM</ons-button>
         <p>Please note, the monetary value of your points must be >= to the value of your redemption</p>
     </div>
 </ons-page>

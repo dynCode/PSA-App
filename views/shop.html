@@ -1,0 +1,40 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Shop</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>SHOP</span></h2>
+    <div style="padding:0 20px; text-align: center">Click on the icon to refine your search. <a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a></div>
+    <div ng-show="loggedIn">
+        <ons-row align="center">
+            <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/discount.html', { animation : 'slide' } )"><img src="images/icons/DISCOUNTS.png" style="width: 75px;" /><br>ON-THE-SPOT<br>DISCOUNTS</ons-button></ons-col>
+            <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/points.html', { animation : 'slide' } )"><img src="images/icons/POINTS.png" style="width: 75px;" /><br>EARN POINTS IN<br>YOUR E-WALLET</ons-button></ons-col>
+        </ons-row>
+        <ons-row align="center">
+            <ons-col size="50%"><ons-button modifier="large light" ng-click="getFreebieRetailList()"><img src="images/icons/FREEBIES.png" style="width: 75px;" /><br>COLLECT STAMPS<br>FOR FREEBIES</ons-button></ons-col>
+            <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/coupons.html', { animation : 'slide' } )"><img src="images/icons/COUPONS.png" style="width: 75px;" /><br>GET RANDS OFF<br>SELECTED PRODUCTS<br>(COUPONS)</ons-button></ons-col>
+        </ons-row>
+        <ons-row align="center">
+            <ons-col><ons-button modifier="large light" onclick="myNavigator.pushPage('views/nominate.html', { animation : 'slide' } )"><img src="images/icons/NOMINATE.png" style="width: 75px;" /><br>NOMINATE YOUR LOCAL SHOP</ons-button></ons-col>
+        </ons-row>
+    </div>
+    <div ng-show="guest">
+        <ons-row align="center">
+            <ons-col size="50%"><ons-button modifier="large light" ng-click="getDiscountCatList()"><img src="images/icons/DISCOUNTS.png" style="width: 75px;" /><br>ON-THE-SPOT<br>DISCOUNTS</ons-button></ons-col>
+            <ons-col size="50%"><ons-button modifier="large light" ng-click="getPointCatList()"><img src="images/icons/POINTS.png" style="width: 75px;" /><br>EARN POINTS IN<br>YOUR E-WALLET</ons-button></ons-col>
+        </ons-row>
+        <ons-row align="center">
+            <ons-col><ons-button modifier="large light" onclick="myNavigator.pushPage('views/nominate.html', { animation : 'slide' } )"><img src="images/icons/NOMINATE.png" style="width: 75px;" /><br>NOMINATE YOUR LOCAL SHOP</ons-button></ons-col>
+        </ons-row>
+    </div>
+</ons-page>

@@ -1,0 +1,26 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Customer Feedback</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <div class="formList"><strong>Question 1:</strong></div>
+    <div style="padding: 0px 20px 20px 10px;">
+        {{feedQ1}} %
+    </div>
+    <div class="formList"><strong>Question 2:</strong></div>
+    <div style="padding: 0px 20px 20px 10px;">
+        {{feedQ2}} %
+    </div>
+    <div class="formList"><strong>Question 3:</strong></div>
+    <div style="padding: 0px 20px 20px 10px;">
+        {{feedQ3}} %
+    </div>
+</ons-page>

@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.psaclub"
-        versionCode = "104" 
-        version   = "1.0.4">
+        versionCode = "150" 
+        version   = "1.5.0">
 
     <name>PSA Club</name>
 
@@ -14,12 +14,10 @@
     <author href="http://www.myitmanager.co.za" email="support@myitmanager.co.za">
         My IT Manager
     </author>
-
-    <!-- all platforms -->
-    <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="false" />
-
-    <platform name="ios">
+    <preference name="phonegap-version" value="cli-7.0.1" />
+    <platform name="ios" >
+        <preference name="orientation" value="portrait" />
+        <preference name="fullscreen" value="false" />  
         <preference name="target-device" value="universal" />
         <preference name="prerendered-icon" value="true" />
         <preference name="detect-data-types" value="true" />
@@ -35,10 +33,17 @@
         <!-- iPad -->
         <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
         <icon src="res/icons/ios/icon-76@2x.png" width="152" height="152" />
+        <icon src="res/icons/ios/icon-83.5@2x.png" width="167" height="167" />
 
+        <!-- Settings Icon -->
+        <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+        <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
+        <icon src="res/icons/ios/icon-small@3x.png" width="87" height="87" />
+        
         <!-- Spotlight Icon -->
         <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
         <icon src="res/icons/ios/icon-40@2x.png" width="80" height="80" />
+        <icon src="res/icons/ios/icon-40@3x.png" width="120" height="120" />
 
         <!-- iPhone / iPod Touch -->
         <icon src="res/icons/ios/icon.png" width="57" height="57" />
@@ -47,10 +52,6 @@
         <!-- iPad -->
         <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
         <icon src="res/icons/ios/icon-72@2x.png" width="144" height="144" />
-
-        <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
-        <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
 
         <!-- iPad Spotlight and Settings Icon -->
         <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
@@ -62,7 +63,9 @@
         <splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136" />
         <splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024" />
     </platform>
-    <platform name="android"> 
+    <platform name="android" >
+        <preference name="orientation" value="portrait" />
+        <preference name="fullscreen" value="false" />  
         <icon src="res/icons/android/icon-36-ldpi.png" qualifier="ldpi" />
         <icon src="res/icons/android/icon-48-mdpi.png" qualifier="mdpi" />
         <icon src="res/icons/android/icon-72-hdpi.png" qualifier="hdpi" />
@@ -78,6 +81,16 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+    
+    <plugin name="cordova-plugin-camera" spec="~2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+    </plugin>
+    <plugin name="cordova-plugin-ios-camera-permissions" spec="1.0.3" >
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+    </plugin>
+    
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-whitelist" />
@@ -103,4 +116,13 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
+    <platform name="ios">
+        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
+        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
+   </platform>
+    
 </widget>

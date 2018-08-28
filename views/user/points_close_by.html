@@ -19,25 +19,26 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Search Partners Close By</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader">SEARCH CLOSE BY</h2>
     <div style="height: 100%;">
         <div id="map-container" ng-controller="mapController" ng-init="init('Points','15')">
             <a href="#theListOfPartners" class="button button" style="width:100%;">Partner List</a>
             <map zoom="12" center="current-position" geo-fallback-center="{{myLatLong}}">
-                <marker position="current-position" icon="http://www.mahala.mobi/mobiTest/images/myPos.png"></marker>
+                <marker position="current-position" icon="https://www.mahala.mobi/mobiTest/images/myPos.png"></marker>
             </map>
             <div store-info class="custom-control">Store Info</div>
             <ons-list id="theListOfPartners">
@@ -45,7 +46,7 @@
                 <ons-list-item modifier="partnerList" class="list-item-container list__item--tappable" ng-repeat="partner in partnerList" ng-click="MapPartnerVoucher(partner.partner_id,'Points')">
                     <ons-row>
                         <ons-col width="95px">
-                            <img src="http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner.partner_logo}}" class="thumbnail">
+                            <img src="https://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner.partner_logo}}" class="thumbnail">
                         </ons-col>
                         <ons-col>
                             <div class="name">
@@ -58,7 +59,7 @@
                                 {{partner.partner_category}}
                             </div>
                         </ons-col>
-                        <ons-col width="40px"></ons-col>
+                        <ons-col width="40px"><i class="fa fa-chevron-right" aria-hidden="true" style="color: rgb(206,40,44);"></i></ons-col>
                     </ons-row>
                 </ons-list-item>
             </ons-list>

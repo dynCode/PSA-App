@@ -1,25 +1,21 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Coupon Code</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
     <h2 class="myHeader"><span>COUPON CODE</span></h2>
     <div style="padding: 0 20px;">
         <h3>Your coupon code is</h3>
         <h1 modifier="large outline" id="btnLogIn">{{couponCode}}</h1>
-        <!--<p>Present this coupon code to the cashier at any Checkers or Checkers Hyper store before you pay and your savings will be deducted from your basket / total.  This coupon code will only be valid for 24 hours, should it expire, feel free to request a new coupon code.  Terms and conditions apply.</p>  -->
+        <p>Present this coupon code to the cashier at any Dis-Chem store before you pay and your savings will be deducted from your basket / total.  This coupon code will only be valid for 24 hours, should it expire, feel free to request a new coupon code.  Terms and conditions apply.</p>  
         <img src="images/CheckersLOGO.png" style="max-width: 600px; width: 100%;" />
     </div>
 </ons-page>

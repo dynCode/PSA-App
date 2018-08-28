@@ -1,21 +1,21 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Coupon</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
-    <h2 class="myHeader"><span>COUPON INFO</span></h2>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+     <h2 class="myHeader"><span>COUPON INFO</span></h2>
     <div style="padding: 0 20px;">
         <img src="images/eeziCoupons.png" style="max-width: 380px; width: 100%;" />
     </div>
@@ -30,7 +30,7 @@
                         {{couponname}}
                     </div>
                     <div>
-                        Save <br /><span style="font-size: 18px; font-weight: bold; color: #c82126;">{{coupondiscount}}</span>
+                        Save <br /><span style="font-size: 18px; font-weight: bold; color: #0b67a0;">{{coupondiscount}}</span>
                     </div>
                     <div class="desc">
                         {{coupondescription}}

@@ -15,25 +15,29 @@
         <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner2}}" style="max-width: 800px; width: 100%;" /></div>
         <div class="imgBlock hideableL" style="display: none;"><img src="{{Banner3}}" style="max-width: 800px; width: 100%;" /></div>
     </div>
-    <div class="formShadow">
-        <div class="formList">
-            <div class="form-row formListInputLrg">
-                <input ng-model="data.loyaltyNum" type="text" class="text-input" placeholder="Loyalty / Cell Number" />
-            </div>
-        </div>
-        <div class="formList">
-            <div class="form-row formListInputLrg">
-                <input ng-model="data.password" type="password" class="text-input" placeholder="Password" />
-            </div>
-        </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>LOGIN</span></h2>
+    <hr>
+    <div style="padding:0 20px">
+        <h4>FIRST TIME USERS:</h4>
+        <p>Use your loyalty no. as both user name & password. Remember to update your password under Profile to keep your account secure. <a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a> or phone <a href="tel:0860624252">0860 62 42 52</a>.</p>
     </div>
-    <div style="padding:20px">
+    <hr>
+    
+    <div style="padding:0 20px">
+        <div class="form-row formListInputLrg">
+            <input ng-model="data.loyaltyNum" type="text" class="text-input" placeholder="Loyalty / Cell Number" />
+        </div>
+        <div class="form-row formListInputLrg">
+            <input ng-model="data.password" type="password" class="text-input" placeholder="Password" />
+        </div>
         <ons-button modifier="large" id="btnLogIn" ng-click="LogIn()" style="width:100%">LOG IN</ons-button>
-        <br />
-        <br />
-        <button class="button--large--cta" onclick="myNavigator.pushPage('views/resetpassword.html', { animation : 'slide' } )" style="background-color: #00af88;">Reset your Password</button>
-        <p>FIRST TIME? To log in, use your loyalty number printed on your card as your password as well. To change your password contact <a href="tel:+27860021067" style="text-decoration: none; color: #01153a;">0860 021 067</a> or click here to complete a request form.</p>
-        <p>If you can’t remember your password, please click the “Reset your Password” button and follow the easy prompts.</p>
-        
+        <ons-row>
+            <!--<ons-col size="50%" align="left"><ons-button modifier="quiet" ng-click="regularEnroll()">Sign up</ons-button></ons-col>-->
+            <ons-col size="50%" align="right"><ons-button modifier="quiet" onclick="myNavigator.pushPage('views/resetpassword.html', { animation : 'slide' } )" >Forgot Password</ons-button></ons-col>
+        </ons-row>
     </div>
 </ons-page>

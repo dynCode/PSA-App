@@ -1,48 +1,34 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
-        <div class="center">Redemptions</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="center">e-Wallet</div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
-        <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
-        </div>
+        <div><img src="{{Banner1}}" style="max-width: 800px; width: 100%;" /></div>
     </div>
-    <h2 class="myHeader"><span>REDEEM YOUR POINTS</span></h2>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>E-WALLET</span></h2>
     <div style="padding:20px">
-        <table>
-            <tr>
-                <td>Your Balance:</td>
-                <td style="border: 1px solid #C82126;"><strong>R {{currentRands}}</strong></td>
-            </tr>
-        </table>
+        Your e-Wallet Balance:
+        <h3 style="border: 1px solid #0b67a0; background-color: #d1d4da">R {{currentRands}}</h3>
+        <p>Your e-Wallet contains all your points that is converted to Rands. You can spend your e-Wallet on anything your heart desires, simply phone us on 0860 62 42 52 or quick shop below:<br><a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a></p>
     </div>
-    <h3 style="color:#ce282c;">Select your REWARD:</h3>
-    <ons-list>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/partner_redemption.html', { animation : 'lift' } ); menu.closeMenu();">
-            RETAILERS
-        </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/Airtime.html', { animation : 'lift' } ); menu.closeMenu();">
-            AIRTIME
-        </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/Grocery.html', { animation : 'lift' } ); menu.closeMenu();">
-            GROCERIES
-        </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/giftCard.html', { animation : 'lift' } ); menu.closeMenu();" style="color:#ce282c;">
-            GIFT CARDS
-        </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/NuMetro.html', { animation : 'lift' } ); menu.closeMenu();">
-            NU METRO
-        </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/feedachild.html', { animation : 'lift' } ); menu.closeMenu();">
-            FEED A CHILD
-        </ons-list-item>
-    </ons-list>
+    <ons-row align="center">
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/Grocery.html', { animation : 'lift' } )"><img src="images/icons/GROCERIES.png" style="width: 75px;" /><br>GROCERIES</ons-button></ons-col>
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/Airtime.html', { animation : 'lift' } )"><img src="images/icons/AIRTIME.png" style="width: 75px;" /><br>AIRTIME</ons-button></ons-col>
+    </ons-row>
+    <ons-row align="center">
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/NuMetro.html', { animation : 'lift' } )"><img src="images/icons/MOVIE-TICKETS.png" style="width: 75px;" /><br>NU METRO MOVIE TICKETS</ons-button></ons-col>
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/giftCard.html', { animation : 'lift' } )"><img src="images/icons/GIFT-CARDS.png" style="width: 75px;" /><br>GIFT CARDS</ons-button></ons-col>
+    </ons-row>
+    <ons-row align="center">
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/partner_redemption.html', { animation : 'lift' } )"><img src="images/icons/SHOP.png" style="width: 75px;" /><br>SHOP</ons-button></ons-col>
+        <ons-col size="50%"><ons-button modifier="large light" onclick="myNavigator.pushPage('views/user/feedachild.html', { animation : 'slide' } )"><img src="images/icons/FEED-CHILD.png" style="width: 75px;" /><br>FEED A CHILD</ons-button></ons-col>
+    </ons-row>
 </ons-page>

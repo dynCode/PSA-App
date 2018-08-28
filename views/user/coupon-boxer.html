@@ -1,0 +1,54 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Coupons</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader"><span>COUPONS</span></h2>
+    <div style="padding: 0 20px;">
+        <p><strong>How to use your Coupons:</strong></p>
+        <ol>
+            <li>Scroll down to view Coupons / Rands off</li>
+            <li>Click on “My Coupon Code”</li>
+            <li>Show unique code to Cashier when you pay.</li>
+        </ol>
+        <div><a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a></div>
+        <img src="images/Boxer.jpg" style="max-width: 380px; width: 100%;" />
+        <ons-button modifier="large" id="btnLogIn" ng-click="getBoxerCouponCode()" style="width:100%">MY COUPON CODE<br><small>Click here to generate your unique Coupon Code,<br>display this code to your cashier when you pay.</small></ons-button>
+    </div>
+    <ons-list>
+        <ons-list-item modifier="couponList" class="list-item-container list__item--tappable" ng-repeat="coupon in couponList" ng-click="showCoupon(coupon.id)">
+            <ons-row>
+                <ons-col width="95px">
+                    <img src="{{coupon.imageUrl}}" class="thumbnail">
+                </ons-col>
+                <ons-col>
+                    <div class="name" style="text-align: left;">
+                        {{coupon.name}}
+                    </div>
+                    <div style="text-align: left;">
+                        <span style="font-size: 18px; font-weight: bold; color: #0b67a0;">Save {{coupon.discount}}</span>
+                    </div>
+                    <div class="desc" style="text-align: left;">
+                        <small>{{coupon.description}}</small>
+                    </div>
+                </ons-col>
+                <ons-col width="40px"></ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+    <div style="padding:20px">
+        <ons-button modifier="large" id="btnLogIn" ng-click="getBoxerCouponCode()" style="width:100%">MY COUPON CODE<br><small>Click here to generate your unique Coupon Code,<br>display this code to your cashier when you pay.</small></ons-button>
+    </div>
+</ons-page>

@@ -1,7 +1,7 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Update Profile</div>
         <div class="right">
@@ -12,9 +12,13 @@
     </ons-toolbar>
     <div class="topBanner">
         <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
         </div>
     </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
     <h2 class="myHeader"><span>UPDATE PROFILE</span></h2>
     <div style="padding: 0 20px;">
         <ons-row align="center">
@@ -74,12 +78,8 @@
         <div class="form-row formListInputLrg">
             <input type="text" class="text-input" ng-model="data.up_Sub" placeholder="Suburb" value="">
         </div>
-        
+        <p>&nbsp;</p>
+        <ons-button modifier="large" id="btnLogIn" ng-click="updateProfile()" style="width:100%">SUBMIT</ons-button>
     </div>
     <p>&nbsp;</p>
-    <ons-list>
-        <ons-list-item modifier="chevron" ng-click="updateProfile()">
-            Update Profile
-        </ons-list-item>
-    </ons-list>
 </ons-page>

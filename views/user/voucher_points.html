@@ -1,53 +1,41 @@
 <ons-page>
     <ons-toolbar ng-style="{'background-color':topbarBG}">
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-back-button></ons-back-button>
         </div>
         <div class="center">Points Voucher</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="right"></div>
     </ons-toolbar>
-    <div class="topBanner">
-        <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
-        </div>
-    </div>
     <div style="padding: 0 20px;">
         <table width='100%' style='border:none'>
             <tr>
-                <td colspan='2' style='border-bottom:2px solid #cd242d;' align='center'><img src="http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner_logo}}" style="max-width: 380px; width: 90%;"></td>
+                <td colspan='2' style='border-bottom:2px solid #cd242d;' align='center'><img src="https://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner_logo}}" width="90%"></td>
             </tr>
             <tr>
-                <td colspan="2" align='center'><h3>{{partner_voucher}}</h3></td>
+                <td colspan="2"><h3>{{partner_voucher}}</h3></td>
             </tr>
             <tr>
-                <td>Terms:</td><td>{{partner_terms}}</td>
+                <td style="color: rgb(206,40,44);">How:</td><td>{{partner_terms}}</td>
             </tr>
             <tr>
-                <td colspan="2">&nbsp;</td>
+                <td>Loy No:</td><td>{{userMpacc}}</td>
             </tr>
             <tr>
-                <td>Tel:</td><td>{{partner_tel}}</td>
-            </tr>
-            <tr>
-                <td>Web:</td><td><a href="{{partner_web}}" target="_blank">View Site</a></td>
+                <td>Web:</td><td><a href="#" onclick="window.open('{{partner_web}}','_system','')">View Website / Order online</a></td>
             </tr>
             <tr>
                 <td>Address:</td><td>{{partner_address}}</td>
             </tr>
             <tr>
-                <td>Date:</td><td>{{voucher_date}}</td>
+                <td>Tel:</td><td>{{partner_tel}}</td>
             </tr>
             <tr>
-                <td>Loyalty no:</td><td>{{userMpacc}}</td>
+                <td>Date:</td><td>{{voucher_date}}</td>
             </tr>
         </table>
     </div>
     
-    <div style="margin: 0 20px; text-align: center; background-color: #a9abae;"><h2 style="padding: 5px; color: #fff;">SECURE YOUR POINTS</h2></div>
+    <div style="margin: 0; text-align: center; background-color: #a9abae;"><h2 style="padding: 5px; color: #606062;">SECURE YOUR POINTS</h2></div>
     
     <div style="padding: 0 20px;">
         <div class="formListLrg">
@@ -57,16 +45,23 @@
             <div class="formListLable">Invoice No:</div><div class="formListInputLrg"><input type="text" class="text-input"  placeholder="Invoice No" ng-model="data.pointsTransInv"></div>
         </div>
         <div class="formListLrg">
-            <div class="formListLable"><br></div><div class="formListInputLrg"><ons-button ngf-select ng-model="data.invoiceSlip" name="file" ngf-pattern="'image/*'" ngf-capture="'camera'" ngf-resize-if="$width > 800 || $height > 800" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-resize="{width: 800, height: 800}" style="background-color: #ccc; color: #000;"><ons-icon icon="fa fa-camera"></ons-icon> UPLOAD YOUR TILL SLIP</ons-button></div>
+            <div class="formListLable"><br></div><div class="formListInputLrg"><ons-button modifier="large" id="btnLogIn" ngf-select ng-model="data.invoiceSlip" name="file" ngf-pattern="'image/*'" ngf-capture="'camera'" ngf-resize-if="$width > 800 || $height > 800" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-resize="{width: 800, height: 800}">UPLOAD YOUR TILL SLIP</ons-button></div>
         </div>
         <p>If your transaction value exceeds R500, a till slip picture will be required to verify your transaction.</p>
     </div>
-    <div style="margin: 0 10px; background-color: #cccccc;">
+    <div style="margin: 0 10px;">
         <div style="padding: 10px;">
+            <div class="formList"><strong>APPROVAL</strong></div>
             <p>Present your phone to the cashier to approve the transaction.</p>
             <div class="formListLrg">
-                <div class="formListLable">CASHIER CODE:</div>
+                <div class="formListLable">SHOP APPROVAL:</div>
                 <div class="formListInputLrg"><input type="number" class="text-input"  placeholder="Enter Code" ng-model="data.cashierCode"></div>
+            </div>
+            <div class="formListLrg" style="height: 30px;">
+                <div class="formListLable">Points:</div><div class="formListInput" style="width:20%"><label class="radio-button"><input type="radio" ng-model="data.isPoints" value="yes" checked><div class="radio-button__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            </div>
+            <div class="formListLrg" style="height: 30px;" ng-if="voucher_token == 'Y'">
+                <div class="formListLable">Tokens:</div><div class="formListInput" style="width:20%"><label class="radio-button"><input type="radio" ng-model="data.isPoints" value="no"><div class="radio-button__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
             </div>
             <div style="padding: 10px;">
                 <!--<ons-button id="btnLogIn" ng-click="scanCode(data.cashierCode)" style="width:50%">Scan Barcode (on App)</ons-button>-->
@@ -74,7 +69,7 @@
         </div>
     </div>
     <div style="padding: 0 20px;">
-        <div style="text-align: center;"><img src='http://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/test_1D.php?text={{CardNumber}}' width='270px' /></div>
+        <div style="text-align: center;"><img src='https://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/test_1D.php?text={{CardNumber}}' width='270px' /></div>
         <!--<input type="text" class="text-input" ng-model="data.partId" value="{{partner_id}}">
         <input type="text" class="text-input" ng-model="data.partName" ng-value="{{partner_name}}">-->
         <img ng-show="data.invoiceSlip.$valid" ngf-thumbnail="data.invoiceSlip" ngf-size="{width: 100, height: 100, quality: 0.9}">
@@ -85,7 +80,7 @@
 
         <p class="location" style='color:#000'><i>When a telephonic booking is made (e.g. Medipost / Funeral Plan), Mahala will interface directly with the Loyalty Partner to register your transaction and no action is reguired from your side.</i></p>
 
-        <p style='color:#cd242d'><a href="#" onclick="myNavigator.pushPage('views/TandC.html');" style="text-decoration: none; color: #C82126;">TERMS AND CONDITIONS</a> APPLY.</p>
-        
+        <p><a href="#" onclick="myNavigator.pushPage('views/TandC.html');" style="text-decoration: none;">TERMS AND CONDITIONS</a> APPLY.</p>
+        <a href="#" onclick="myNavigator.pushPage('views/feedback.html', { animation : 'lift' } )">Problems?</a>
     </div>
 </ons-page>

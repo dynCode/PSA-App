@@ -2,43 +2,38 @@
     <ons-list class="bottom-menu-list">
         <div ng-hide="loggedIn">
             <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/login.html'); menu.closeMenu();">
-                Loyalty Login
+                Login
             </ons-list-item>
         </div>
-        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/partners.html'); menu.closeMenu();">
-            Partners
+        <div ng-show="loggedIn">
+            <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/user/profile.html', { animation : 'slide' } ); menu.closeMenu();">
+                Profile
+            </ons-list-item>
+        </div>
+        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/shop.html'); menu.closeMenu();">
+            Shop
         </ons-list-item>
-        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/howItWorks.html'); menu.closeMenu();">
-            How It Works
+        <div ng-show="loggedIn">
+            <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/user/redemptions.html'); menu.closeMenu();">
+                e-Wallet
+            </ons-list-item>
+        </div>
+        <ons-list-item modifier="chevron" class="bottom-menu-item" ng-click="loadpage(3); menu.closeMenu();">
+            About Us
         </ons-list-item>
-        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/wantToJoin.html'); menu.closeMenu();">
-            Want To Join
+        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/promotions.html'); menu.closeMenu();">
+            Promotions
         </ons-list-item>
-        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/contactUs.html'); menu.closeMenu();">
-            Contact Us
+        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/socialmedia.html'); menu.closeMenu();">
+            Social Media
         </ons-list-item>
+        <ons-list-item modifier="chevron" class="bottom-menu-item" onclick="myNavigator.pushPage('views/support.html'); menu.closeMenu();">
+            Support
+        </ons-list-item>
+        <div ng-show="loggedIn">
+            <ons-list-item modifier="chevron" class="bottom-menu-item" ng-click="logout(); menu.closeMenu();">
+                Logout
+            </ons-list-item>
+        </div>
     </ons-list>
-    <div ng-show="loggedIn">
-        <h2 class="myHeader"><span>MEMBERS AREA</span></h2>
-        <ons-list>
-            <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/balance.html', { animation : 'slide' } ); menu.closeMenu();">
-                Your Balance
-            </ons-list-item>
-            <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/discount.html', { animation : 'slide' } ); menu.closeMenu();">
-                Discount Vouchers
-            </ons-list-item>
-            <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/points.html', { animation : 'slide' } ); menu.closeMenu();">
-                Point Partners
-            </ons-list-item>
-            <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/coupons.html', { animation : 'slide' } ); menu.closeMenu();">
-                EEZI Coupons
-            </ons-list-item>
-            <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('views/user/redemptions.html', { animation : 'slide' } ); menu.closeMenu();">
-                Redemptions
-            </ons-list-item>
-            <ons-list-item modifier="chevron" ng-click="logout()">
-                LOG OUT
-            </ons-list-item>
-        </ons-list>
-    </div>
 </ons-page>

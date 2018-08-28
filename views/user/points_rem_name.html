@@ -1,0 +1,52 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Search by Name</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
+    <h2 class="myHeader">SEARCH BY NAME</h2>
+    <div style="padding: 0 20px;">
+        <p>Select a partner from the dorp down box below.</p>
+    </div>
+    <div class="formShadow">
+        <div class="formList formShadow">
+            <div class="formListLable">PARTNER NAME:</div><div class="formListInput"><select ng-change="searchRemPointName()" ng-model="selectPointsName" ng-options="partner.Name for partner in pointsDD" style="width:100%;"><option value="">Select a Partner</option></select></div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div ng-show="searchOk">
+        <ons-list>
+            <ons-list-header>Available Partners:</ons-list-header>
+            <ons-list-item modifier="partnerList" class="list-item-container list__item--tappable" ng-repeat="partner in partnerList" ng-click="pointsRemVoucher(partner.partner_id)">
+                <ons-row>
+                    <ons-col width="95px">
+                        <img src="https://www.mahala.mobi/components/com_jumi/files/mahala_WSDL/logos/{{partner.partner_logo}}" class="thumbnail">
+                    </ons-col>
+                    <ons-col>
+                        <div class="name">
+                            {{partner.partner_name}}
+                        </div>
+                        <div class="location">
+                            <i class="fa fa-map-marker"></i> {{partner.partner_address}}, {{partner.partner_suburb}}, {{partner.partner_province}}
+                        </div>
+                        <div class="desc">
+                            {{partner.partner_category}}
+                        </div>
+                    </ons-col>
+                    <ons-col width="40px"><i class="fa fa-chevron-right" aria-hidden="true" style="color: rgb(206,40,44);"></i></ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+    </div>
+</ons-page>

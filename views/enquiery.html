@@ -3,35 +3,36 @@
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">Enquiry Form</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
+        <div class="center">Enquiry Now</div>
+        <div class="right"></div>
     </ons-toolbar>
     <div class="topBanner">
-        <div class="subImgBlock">
-            <img src="{{subBanner}}" style="max-width: 800px; width: 100%;" />
-        </div>
+        <div><img src="{{Banner3}}" style="max-width: 800px; width: 100%;" /></div>
     </div>
+    <ons-row align="center">
+        <ons-col size="90%"><div class="formListInputLrg"><input type="search" class="search-input" ng-model="data.quickSearch" placeholder="Quick search for a shop / deal"></div></ons-col>
+        <ons-col size="10%"><ons-button ng-click="quickSearch()"><ons-icon icon="fa-search"></ons-button></ons-col>
+    </ons-row>
     <h2 class="myHeader"><span>CONTACT ME ABOUT:</span></h2>
     <p class="text-center">PLEASE ENTER YOUR CONTACT DETAILS BELOW</p>
     <div class="formShadow">
         <div class="formList">
-            <div class="formListLable">Refer a friend to PSA:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactRefer" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            <div class="formListLable">What is my PSACLUB no</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.psano" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
         </div>
         <div class="formList">
-            <div class="formListLable">PSA CARE:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactCare" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            <div class="formListLable">Update my details</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactUpdate" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
         </div>
         <div class="formList">
-            <div class="formListLable">PSA PROTECT:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactProtect" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            <div class="formListLable">I want a physical card</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactCard" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
         </div>
         <div class="formList">
-            <div class="formListLable">Update my personal details:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactUpdate" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            <div class="formListLable">More info on PSA Care</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactCare" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
         </div>
         <div class="formList">
-            <div class="formListLable">Request a physical card:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactCard" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+            <div class="formListLable">More info on PSA Protect</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactProtect" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">Refer a friend (details below)</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.contactRefer" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
         </div>
         <h4>Your Details:</h4>
         <div class="formList">

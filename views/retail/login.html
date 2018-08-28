@@ -1,0 +1,25 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Retail Login</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">RETAIL ID:</div><div class="formListInput"><input ng-model="data.retailID" type="text" class="text-input" placeholder="Retail ID" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">PASSWORD:</div><div class="formListInput"><input ng-model="data.retailpassword" type="password" class="text-input" placeholder="Password" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large" id="btnLogIn" ng-click="RetailLogIn()" style="width:100%">LOG IN</ons-button>
+    </div>
+</ons-page>

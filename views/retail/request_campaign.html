@@ -1,0 +1,45 @@
+<ons-page>
+    <ons-toolbar ng-style="{'background-color':topbarBG}">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Request a Campaign</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <div class="topBanner">
+        <div class="subImgBlock">
+            <img src="{{subBanner}}" style="max-width: 380px; width: 100%;" />
+        </div>
+    </div>
+    <h2 class="myHeader"><span>Request a Campaign for:</span></h2>
+    <p class="text-center">{{retailName}}</p>
+    <div class="formShadow">
+        <div class="formList">
+            <div class="formListLable">RETAILER NAME:</div><div class="formListInput"><input ng-model="retailName" type="text" class="text-input" placeholder="Retailer Name" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">EMAIL:</div><div class="formListInput"><input ng-model="data.rereEmail" type="text" class="text-input" placeholder="Retailer Email" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">TEL NUMBER:</div><div class="formListInput"><input ng-model="data.rereTel" type="text" class="text-input" placeholder="Retailer Tel" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">EMAIL CAMPAIGN:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.emailCamp" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">SMS CAMPAIGN:</div><div class="formListInput" style="width:20%"><label class="checkbox"><input type="checkbox" ng-model="data.smsCamp" value="yes"><div class="checkbox__checkmark"></div><span class="ons-checkbox-inner"></span></label></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CAMPAIGN NAME:</div><div class="formListInput"><input ng-model="data.rereCampName" type="text" class="text-input" placeholder="Campaign Name" /></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CAMPAIGN MESSAGE:</div><div class="formListInput"><textarea ng-model="data.rereCampMsg" type="text" class="text-input" placeholder="Campaign Message"></textarea></div>
+        </div>
+        <div class="formList">
+            <div class="formListLable">CAMPAIGN DATE</div><div class="formListInput"><input ng-model="data.rereCampDate" type="text" class="text-input" placeholder="Campaign Date" /></div>
+        </div>
+    </div>
+    <div style="padding:20px">
+        <ons-button modifier="large" id="btnLogIn" ng-click="retailerCamp()" style="width:100%">SUBMIT</ons-button>
+    </div>
+</ons-page>
