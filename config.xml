@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.psaclub"
-        versionCode = "150" 
-        version   = "1.5.0">
+        versionCode = "151" 
+        version   = "1.5.1">
 
     <name>PSA Club</name>
 
@@ -14,7 +14,7 @@
     <author href="http://www.myitmanager.co.za" email="support@myitmanager.co.za">
         My IT Manager
     </author>
-    <preference name="phonegap-version" value="cli-7.0.1" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <platform name="ios" >
         <preference name="orientation" value="portrait" />
         <preference name="fullscreen" value="false" />  
@@ -46,7 +46,7 @@
         <icon src="res/icons/ios/icon-40@3x.png" width="120" height="120" />
 
         <!-- iPhone / iPod Touch -->
-        <icon src="res/icons/ios/icon.png" width="57" height="57" />
+        <icon src="res/icons/ios/icon-57.png" width="57" height="57" />
         <icon src="res/icons/ios/icon@2x.png" width="114" height="114" />
 
         <!-- iPad -->
@@ -57,11 +57,14 @@
         <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
         <icon src="res/icons/ios/icon-50@2x.png" width="100" height="100" />
         
-        <!-- Spalsh screens -->
-        <splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480" />
-        <splash src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
-        <splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136" />
-        <splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024" />
+        <icon src="res/icons/ios/icon.png" width="1024" height="1024" />
+        <!-- Config usage update -->
+        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
+        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
     </platform>
     <platform name="android" >
         <preference name="orientation" value="portrait" />
@@ -70,10 +73,6 @@
         <icon src="res/icons/android/icon-48-mdpi.png" qualifier="mdpi" />
         <icon src="res/icons/android/icon-72-hdpi.png" qualifier="hdpi" />
         <icon src="res/icons/android/icon-96-xhdpi.png" qualifier="xhdpi" />
-        <splash src="res/screen/android/screen-ldpi-portrait.png" qualifier="port-ldpi" />
-        <splash src="res/screen/android/screen-mdpi-portrait.png" qualifier="port-mdpi" />
-        <splash src="res/screen/android/screen-hdpi-portrait.png" qualifier="port-hdpi" />
-        <splash src="res/screen/android/screen-xhdpi-portrait.png" qualifier="port-xhdpi" />
     </platform>
  
     <!-- Third party plugins -->
@@ -116,13 +115,5 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
-    <platform name="ios">
-        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-            <string>We are using the Camera for uploading your till slip.</string>
-        </edit-config>
-        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-            <string>We are using the Camera for uploading your till slip.</string>
-        </edit-config>
-   </platform>
     
 </widget>
